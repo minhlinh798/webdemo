@@ -1,0 +1,189 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    gap: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.images {
+    flex: 1;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.images .main-image img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.images .main-image img:hover {
+    transform: scale(1.05);
+}
+
+.thumbnail {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.thumbnail img {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.thumbnail img:hover {
+    transform: scale(1.1);
+    border: 1px solid #e63946;
+}
+
+.product {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product .brand {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.product h5 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #222;
+}
+
+.product .price {
+    margin: 10px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.product .price .act-price {
+    font-size: 24px;
+    color: #e63946;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.product .price .dis-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+}
+
+.product .price span {
+    font-size: 14px;
+    color: #e63946;
+    font-weight: bold;
+}
+
+.product .about {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin: 15px 0;
+}
+
+.sizes h6 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.sizes .radio {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.sizes .radio input[type="radio"] {
+    display: none;
+}
+
+.sizes .radio span {
+    display: inline-block;
+    border: 1px solid #e63946;
+    color: #e63946;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sizes .radio input[type="radio"]:checked + span {
+    background-color: #e63946;
+    color: #fff;
+}
+
+.cart .btn {
+    background-color: #e63946;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cart .btn:hover {
+    background-color: #c92d3e;
+}
+
+.cart i {
+    margin-left: 10px;
+    color: #888;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cart i:hover {
+    color: #333;
+}
+
+h1 {
+    display: block;
+    text-align: center;
+    height: 5px;
+    padding-top: 20px;
+}
+
+a#back {
+    text-decoration: none;
+}
+
+svg.bi.bi-arrow-left-square {
+    margin-right: 10px;
+}
