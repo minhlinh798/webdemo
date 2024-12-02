@@ -1,4 +1,4 @@
-/* General Reset */
+/* Reset cơ bản */
 * {
   margin: 0;
   padding: 0;
@@ -58,78 +58,6 @@ header nav ul li:hover .submenu {
   text-decoration: none;
 }
 
-/* Main Section */
-main {
-  padding: 20px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* Product List Styling */
-.product_list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  list-style-type: none;
-  padding: 0;
-}
-
-.product_list li {
-  position: relative;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  width: 200px;
-  text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-}
-
-.product_list li:hover {
-  transform: scale(1.05);
-}
-
-.product img {
-  width: 100%;
-  height: auto;
-  border-bottom: 1px solid #ddd;
-}
-
-.product .title_product, .product .price_product {
-  padding: 10px;
-  font-size: 16px;
-}
-
-/* Icon Styling */
-.icon {
-  position: absolute;
-  /* top: 50%; */
-  /* left: 50%; */
-  /* transform: translate(-50%, -50%); */
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  display: flex;
-  /* justify-content: flex-start; */
-  top: 0px;
-}
-
-.icon img {
-  width: 35px;
-  height: 35px;
-}
-
-/* Show icon when hovering over product */
-a.icon:hover {
-  opacity: 1;
-}
-
-.nav {
-  display: block;
-  text-align: center;
-}
-
 /* Buttons */
 .buttons {
   display: flex;
@@ -143,14 +71,199 @@ button {
   cursor: pointer;
 }
 
+.login {
+  background-color: #e60023;
+}
+
 .login a {
   color: #fff;
   text-decoration: none;
 }
 
-.login {
-  background-color: #e60023;
+.buttons button:hover {
+  background-color: #ff4c3b;
 }
+
+svg.member {
+  margin-right: 30px;
+  width: 50px;
+  height: 30px;
+  color: #f306f3;
+}
+/* Main Section */
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.mainlist-top {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.mainlist-top h1 {
+  font-size: 2em;
+  color: #555;
+}
+
+.mainlist-top img {
+  height: 60px;
+  margin-top: 10px;
+}
+
+/* Product List */
+.product_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.product_list li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  overflow: visible; /* Đảm bảo không cắt tooltip */
+  position: relative; /* Để tooltip có thể hiển thị đầy đủ */
+}
+
+.product_list li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.product .title_product,
+.product .price_product,
+p.danhmuc_product,
+p.soluong_product {
+  font-size: 16px;
+  color: black;
+  padding: 2px;
+}
+
+a.product {
+  text-decoration: none;
+}
+
+/* Buttons in Products */
+.commen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.commen a {
+  text-decoration: none; /* Loại bỏ gạch chân */
+}
+.cart-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #25d2f9;
+  color: #333;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.commen button {
+  border: none;
+  background-color: #25d2f9;
+  color: white;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.commen button:hover {
+  background-color: #16f6c5;
+}
+.cart-button:hover {
+  background-color: #16f6c5;
+}
+
+
+.cart-button {
+  position: relative;
+  overflow: visible; /* Đảm bảo không cắt tooltip */
+}
+
+.tooltip {
+  position: absolute;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10; /* Đảm bảo tooltip luôn trên cùng */
+}
+
+.cart-button:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-50%);
+}
+
+/* CSS cho số lượng sản phẩm trong giỏ */
+.cart-count {
+  position: absolute;
+  top: 12px;
+  right: 165px;
+  background-color: #f7f7fd;
+  color: #050505;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+/* CSS cho hoạt ảnh bay */
+.fly-to-cart {
+  position: absolute;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fly 1s ease-in-out forwards;
+}
+
+@keyframes fly {
+  0% {
+      transform: translate(0, 0);
+      opacity: 1;
+  }
+  100% {
+      transform: translate(350px, -100px); /* Thay đổi theo vị trí giỏ hàng */
+      opacity: 0;
+  }
+}
+
 
 /* Footer */
 footer {

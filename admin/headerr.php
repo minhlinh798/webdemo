@@ -1,6 +1,4 @@
-  <!-- Sidebar -->
-  <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
     <div class="sidebar-brand-icon rotate-n-15">
@@ -8,17 +6,15 @@
     </div>
     <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
 </a>
-
 <!-- Divider -->
 <hr class="sidebar-divider my-0">
-
 <!-- Nav Item - Dashboard -->
 <li class="nav-item active">
     <a class="nav-link" href="index.html">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
+        <span>Dashboard</span>
+    </a>
 </li>
-
 <!-- Divider -->
 <hr class="sidebar-divider">
 <style>
@@ -29,7 +25,6 @@
     margin: 5px 0;
     /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
-
 .nav-item .pagesmenu .collapse-item {
     color: #dfe6e9; /* Màu chữ mặc định */
     font-size: 14px; /* Kích thước chữ */
@@ -40,46 +35,38 @@
     border-radius: 4px; /* Bo góc link */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .nav-item .pagesmenu .collapse-item:hover {
     background-color: red; /* Màu nền khi hover */
     color: #fef9f9; /* Màu chữ khi hover */
     text-decoration: none; /* Đảm bảo không có gạch chân */
 }
-
 .nav-item .pagesmenu .collapse-item:active {
     background-color: #0984e3; /* Màu nền khi được click */
     color: #ffffff; /* Màu chữ khi được click */
 }
-
 /* Hiệu ứng khi người dùng focus vào link */
 .nav-item .pagesmenu .collapse-item:focus {
     outline: none;
     border: 1px solid #74b9ff; /* Đường viền khi focus */
 }
-
 </style>
 <!-- Heading -->
 <div class="sidebar-heading">
     Quản Trị:
 </div>
-
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
     <div class="pagesmenu">
         <a class="collapse-item" href="adddm.php">Thêm Danh Mục SP</a>
     </div>
 </li>
-
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
     <div class="pagesmenu">
         <a class="collapse-item" href="dm.php">Danh Sách Danh Mục SP</a>
     </div>
 </li>
-
 <!-- Divider -->
-
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
     <div class="pagesmenu">
@@ -92,44 +79,35 @@
         <a class="collapse-item" href="sp.php">Danh Sách Sản Phẩm</a>
     </div>
 </li>
-
 <!-- Nav Item - Tables -->
 <li class="nav-item">
     <div class="pagesmenu">
         <a class="collapse-item" href="qluser.php">Quản Lý Nguời Dùng</a>
     </div>
 </li>
-
 <!-- Divider -->
 <li class="nav-item">
     <div class="pagesmenu">
         <a class="collapse-item" href="qldh.php">Quản Lý Đơn</a>
     </div>
 </li>
-
 <li class="nav-item">
     <div class="pagesmenu">
         <a class="collapse-item" href="tkdt.php">Thống Kê Danh Thu</a>
     </div>
 </li>
-
 </ul>
 <!-- End of Sidebar -->
-
 <!-- Content Wrapper -->
 <div id="content-wrapper" class="d-flex flex-column">
-
 <!-- Main Content -->
 <div id="content">
-
     <!-- Topbar -->
     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
         <!-- Sidebar Toggle (Topbar) -->
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
         </button>
-
         <!-- Topbar Search -->
         <form
             class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
@@ -143,10 +121,8 @@
                 </div>
             </div>
         </form>
-
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
-
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
             <li class="nav-item dropdown no-arrow d-sm-none">
                 <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
@@ -170,7 +146,6 @@
                     </form>
                 </div>
             </li>
-
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
                 <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
@@ -221,7 +196,6 @@
                     <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
                 </div>
             </li>
-
             <!-- Nav Item - Messages -->
             <li class="nav-item dropdown no-arrow mx-1">
                 <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
@@ -287,9 +261,7 @@
                     <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
                 </div>
             </li>
-
             <div class="topbar-divider d-none d-sm-block"></div>
-
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -319,8 +291,6 @@
                     </a>
                 </div>
             </li>
-
         </ul>
-
     </nav>
-    <!-- End of Topbar -->
+<!-- End of Topbar -->

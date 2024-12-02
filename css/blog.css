@@ -95,10 +95,17 @@ h1.contener {
     padding: 50px;
 }
 
+.buttons button:hover {
+    background-color: #ff4c3b;
+ }
+ 
 div#subperman p {
     text-align: left;
-    width: 500px;
+    width: 400px;
     padding-left: 30px;
+}
+img.minhlinh {
+    width: 750px;
 }
 
 .main-clup {
@@ -175,6 +182,26 @@ button.you {
     color: #fff;
     background-color: #ff6600;
 }
+button.you:hover {
+    animation: shake 0.5s ease-in-out; /* Áp dụng hiệu ứng rung */
+}
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px); /* Dịch chuyển sang trái */
+    }
+    50% {
+        transform: translateX(5px); /* Dịch chuyển sang phải */
+    }
+    75% {
+        transform: translateX(-5px); /* Dịch chuyển sang trái */
+    }
+    100% {
+        transform: translateX(0); /* Quay lại vị trí ban đầu */
+    }
+}
 
 button.fult {
     display: inline-block;
@@ -185,7 +212,7 @@ button.fult {
     background-color: #25d4f3;
 }
 button.fult:hover {
-    animation: shake 0.5s ease-in-out; /* Áp dụng hiệu ứng rung */
+    animation: shake 0.5s ease-in-out;
 }
 @keyframes shake {
     0% {

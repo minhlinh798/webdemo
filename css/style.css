@@ -29,6 +29,10 @@ header nav ul {
   gap: 15px;
 }
 
+.buttons button:hover {
+  background-color: #ff4c3b;
+}
+
 header nav ul li {
   position: relative;
 }
@@ -152,6 +156,13 @@ button {
   background-color: #e60023;
 }
 
+svg.bi.bi-cart3 {
+  margin-right: 30px;
+  width: 50px;
+  height: 30px;
+  color: #f306f3;
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -159,3 +170,6 @@ footer {
   background-color: #333;
   color: white;
 }
+
+
+

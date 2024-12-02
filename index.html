@@ -21,12 +21,44 @@
                 </ul>
             </nav>
             <div class="buttons">
+                <a href="giohang.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+                    </svg>
+                </a>
                 <button class="login">
                     <a href="dangnhap.html">ĐĂNG NHẬP</a>
                 </button>
             </div>
         </header>
-        <img src="imgs/banner.png" alt="Ảnh từ thư mục cục bộ" width="100%" height="100%">
+        <style>
+            .slideshow-container {
+                position: relative;
+                margin: auto;
+                overflow: hidden;
+            }
+            @keyframes slide {
+                0% { transform: translateX(100%); }
+                25% { transform: translateX(0); }
+                50% { transform: translateX(0); }
+                75% { transform: translateX(-100%); }
+                100% { transform: translateX(-100%); }
+            }
+        </style>
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="/imgs/banner.png" class="slide-image" width="100%" height="600px">
+            </div>
+            <div class="slide fade">
+                <img src="/imgs/banner6.png" class="slide-image" width="100%" height="600px">
+            </div>
+            <div class="slide fade">
+                <img src="/imgs/banner4.png.jpeg" class="slide-image" width="100%" height="600px">
+            </div>
+            <div class="slide fade">
+                <img src="/imgs/banner5.png" class="slide-image" width="100%" height="600px">
+            </div>
+        </div>
         <main>
             <div>
                 <div class="nav">
@@ -124,7 +156,7 @@
                     <ul class="product_list">
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/q1.png">
+                                <img src="imgs/b10.png">
                                 <a class="icon" href="giohang.html" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
@@ -134,7 +166,7 @@
                         </li>
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/q3.png">
+                                <img src="imgs/b3.png">
                                 <a class="icon" href="giohang.html" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
@@ -144,7 +176,7 @@
                         </li>
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/q7.png">
+                                <img src="imgs/b6.png">
                                 <a class="icon" href="giohang.html" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
@@ -154,7 +186,7 @@
                         </li>
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/q9.png">
+                                <img src="imgs/b9.png">
                                 <a class="icon" href="giohang.html" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
@@ -210,6 +242,22 @@
             </div>
         </main>
         <footer>Copyright &copy; Your Website 2024</footer>
+        <script>
+            let slideIndex = 0;
+            showSlides();
+
+            function showSlides() {
+                let i;
+                let slides = document.getElementsByClassName("slide");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) {slideIndex = 1}    
+                slides[slideIndex-1].style.display = "block";  
+                setTimeout(showSlides, 2000); // Thay đổi ảnh mỗi 2 giây
+            }
+        </script>
         <script src="script.js"></script>
     </body>
 </html>

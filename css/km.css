@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+}
+
+header nav ul li:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #444;
+    padding: 10px;
+    list-style-type: none;
+}
+
+.submenu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.login {
+    background-color: #e60023;
+}
+
+.buttons button:hover {
+    background-color: #ff4c3b;
+ }
+.promotion {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.promotion h1 {
+    color: #ff6f61;
+}
+
+.voucher {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.voucher h2 {
+    margin: 0;
+    color: #333;
+}
+
+.voucher p {
+    margin: 5px 0;
+    color: #666;
+}

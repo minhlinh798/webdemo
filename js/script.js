@@ -27,3 +27,4 @@ productItems.forEach(item => {
     // Đặt icon giỏ hàng vào trong phần tử chứa sản phẩm
     item.appendChild(iconWrapper);
 });
+
