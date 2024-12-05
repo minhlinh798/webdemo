@@ -19,10 +19,6 @@ header {
   color: #fff;
 }
 
-header .logo img {
-  height: 50px;
-}
-
 header nav ul {
   list-style-type: none;
   display: flex;

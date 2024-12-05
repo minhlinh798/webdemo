@@ -13,18 +13,14 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">TRANG CHỦ</a></li>
-                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
-                    <li><a href="sanpham.html">SẢN PHẨM</a></li>
-                    <li><a href="khuyenmai.html">KHUYẾN MÃI</a></li>
-                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                    <li><a href="index.php">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.php">GIỚI THIỆU</a></li>
+                    <li><a href="sanpham.php">SẢN PHẨM</a></li>
+                    <li><a href="khuyenmai.php">KHUYẾN MÃI</a></li>
+                    <li><a href="lienhe.php">LIÊN HỆ</a></li>
                 </ul>
             </nav>
-            <div class="buttons">
-                <button class="login">
-                <a href="danhnhap.html">ĐĂNG NHẬP</a>
-                </button>
-            </div>
+            <div class="buttons"></div>
         </header>
         <div class="promotion">
             <h1>🎉 SIÊU KHUYẾN MÃI CUỐI NĂM 🎉</h1>

@@ -8,15 +8,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 20px;
-    background-color: #333;
-    color: #fff;
-}
-
 header .logo img {
     height: 50px;
 }
@@ -66,15 +57,6 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
-
-.login a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.login {
-    background-color: #e60023;
 }
 
 .contact-container {

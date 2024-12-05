@@ -62,7 +62,7 @@ body {
 .product {
     flex: 1;
     padding: 20px;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: space-between;
 }
@@ -76,7 +76,7 @@ body {
 
 .product h5 {
     font-size: 24px;
-    margin: 10px 0;
+    /* margin: 10px 0; */
     color: #222;
 }
 
@@ -109,8 +109,8 @@ body {
 .product .about {
     font-size: 14px;
     line-height: 1.6;
-    color: #555;
-    margin: 15px 0;
+    color: black;
+    margin: 25px 0;
 }
 
 .sizes h6 {
@@ -143,6 +143,10 @@ body {
 .sizes .radio input[type="radio"]:checked + span {
     background-color: #e63946;
     color: #fff;
+}
+
+.cart {
+    padding-top: 270px;
 }
 
 .cart .btn {

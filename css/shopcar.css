@@ -18,14 +18,8 @@ header {
     color: #fff;
 }
 
-header .logo img {
-    height: 50px;
-}
-
-header nav ul {
-    list-style-type: none;
-    display: flex;
-    gap: 15px;
+.buttons button:hover {
+    background-color: #ff4c3b;
 }
 
 header nav ul li {
@@ -62,37 +56,6 @@ main {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
-}
-
-.buttons {
-    display: flex;
-    gap: 10px;
-}
-
-button {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.login a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.login {
-    background-color: #e60023;
-}
-
-.cart-container {
-    width: 80%;
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .cart-container h1 {
@@ -134,11 +97,6 @@ button {
     margin-bottom: 5px;
 }
 
-.cart-item .item-price {
-    color: #666;
-    font-size: 0.9rem;
-}
-
 .cart-item .item-quantity {
     display: flex;
     align-items: center;
@@ -155,17 +113,7 @@ button {
     margin-left: 5px;
 }
 
-.cart-item .remove-item {
-    background-color: #ff4d4d;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.cart-item .remove-item:hover {
+.cart-item .remove-item .a:hover {
     background-color: #ff1a1a;
 }
 

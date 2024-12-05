@@ -19,27 +19,31 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+    <link href="css/support.css" rel="stylesheet">
 </head>
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 <style>
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
 }
 
-.connten {
+.support {
     max-width: 1100px;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-h1 {
+.support h2 {
     color: #333;
     margin-bottom: 20px;
 }
@@ -52,7 +56,7 @@ table {
 
 table th, table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px;
     text-align: center;
 }
 
@@ -83,56 +87,59 @@ a:hover {
 }
 
 </style>
-<body id="page-top">
-
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-
 <?php
     include "headerr.php";
 ?>
 <?php
-    include "class/sanpham_class.php";
-    $sanpham = new sanpham;
-    $show_sanpham = $sanpham ->show_sanpham();
-?>
+    // Kết nối cơ sở dữ liệu
+    $conn = new mysqli('localhost', 'root', '', 'webdemo');
 
-<div class="connten">
-    <h1>Danh sách sản phẩm</h1>
+    // Kiểm tra kết nối
+    if ($conn->connect_error) {
+        die("Kết nối thất bại: " . $conn->connect_error);
+    }
+
+    // Lấy dữ liệu từ bảng lienhe
+    $sql = "SELECT id_lienhe, ten_nguoidung, email, sdt, noidung, created_at FROM lienhe ORDER BY created_at DESC";
+    $result = $conn->query($sql);
+?>
+<div class="support">
+    <h2>Quản Lý Người Dùng Khi Gặp Lỗi!</h2>
     <table>
         <tr>
             <th>Stt</th>
             <th>ID</th>
-            <th>Sản phẩm</th>
-            <th>Danh mục</th>
-            <th>Giá(vnđ)</th>
-            <th>Số lượng</th>
-            <th>Mô tả</th>
-            <th>Hình ảnh</th>
+            <th>Họ Tên</th>
+            <th>Email</th>
+            <th>SĐT</th>
+            <th>Nội Dung</th>
+            <th>Thời gian gửi</th>
             <th>Tùy biến</th>
         </tr>
         <?php
-            if($show_sanpham){$i=0;
-                while($result = $show_sanpham ->fetch_assoc()) {$i++;
+            if($result->num_rows > 0){$i=0;
+                while($row = $result ->fetch_assoc()) {$i++;
         ?>
         <tr>
             <td><?php echo $i ?></td>
-            <td><?php echo $result ['id_sanpham'] ?></td>
-            <td><?php echo $result ['ten_sanpham'] ?></td>
-            <td><?php echo $result ['ten_danhmuc'] ?></td>
-            <td><?php echo $result ['giasp'] ?></td>
-            <td><?php echo $result ['soluong'] ?></td>
-            <td><?php echo $result ['mota'] ?></td>
-            <td><?php echo $result ['anh'] ?></td>
-            <td><a href="updatesp.php?id_sanpham=<?php echo $result['id_sanpham'] ?>">Sửa</a> | <a href="deletesp.php?id_sanpham=<?php echo $result['id_sanpham'] ?>">Xóa</a></td>
+            <td><?php echo $row['id_lienhe']; ?></td>
+            <td><?php echo $row['ten_nguoidung']; ?></td>
+            <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['sdt']; ?></td>
+            <td><?php echo $row['noidung']; ?></td>
+            <td><?php echo $row['created_at']; ?></td>
+            <td><a href="delete_lienhe.php?id=<?php echo $row['id_lienhe']; ?>">Xóa</a></td>
         </tr>
         <?php
-                }
             }
+        }
         ?>
     </table>
 </div>
-
+<?php
+// Đóng kết nối
+$conn->close();
+?>
 <?php
     include "script.php";
 ?>

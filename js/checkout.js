@@ -31,6 +31,6 @@ function toggleExtraFields() {
         // Perform any additional validation or processing here if needed
 
         // Redirect to payment confirmation page
-        window.location.href = "payment-confirmation.html";
+        window.location.href = "qldh.php";
     });
 });

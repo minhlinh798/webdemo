@@ -96,6 +96,11 @@
         <a class="collapse-item" href="tkdt.php">Thống Kê Danh Thu</a>
     </div>
 </li>
+<li class="nav-item">
+    <div class="pagesmenu">
+        <a class="collapse-item" href="support.php">Hỗ Trợ</a>
+    </div>
+</li>
 </ul>
 <!-- End of Sidebar -->
 <!-- Content Wrapper -->

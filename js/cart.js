@@ -3,6 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     checkoutButton.addEventListener("click", function() {
         // Redirect to the payment page
-        window.location.href = "thanhtoan.html";
+        window.location.href = "thanhtoan.php";
     });
 });

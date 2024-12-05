@@ -119,7 +119,7 @@ main {
   gap: 20px;
   justify-content: center;
   list-style-type: none;
-  padding: 0;
+  padding: 30px;
 }
 
 .product_list li {
@@ -158,6 +158,7 @@ p.soluong_product {
 
 a.product {
   text-decoration: none;
+  color: black;
 }
 
 /* Buttons in Products */
@@ -227,19 +228,6 @@ a.product {
   visibility: visible;
   opacity: 1;
   transform: translateY(-50%);
-}
-
-/* CSS cho số lượng sản phẩm trong giỏ */
-.cart-count {
-  position: absolute;
-  top: 12px;
-  right: 165px;
-  background-color: #f7f7fd;
-  color: #050505;
-  font-size: 12px;
-  padding: 4px 8px;
-  border-radius: 50%;
-  font-weight: bold;
 }
 
 /* CSS cho hoạt ảnh bay */

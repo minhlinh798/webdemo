@@ -1,3 +1,38 @@
+<?php
+include "connect.php";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Nhận dữ liệu từ form
+    $ten = $conn->real_escape_string($_POST['name']);
+    $giasp = $conn->real_escape_string($_POST['giasp']);
+    $soluong = $conn->real_escape_string($_POST['soluong']);
+    $tongtien = $conn->real_escape_string($_POST['tongtien']);
+    $hinhanh = $conn->real_escape_string($_POST['hinhanh']);
+    $trangthai = $conn->real_escape_string($_POST['trangthai']);
+
+    // Kiểm tra dữ liệu hợp lệ
+    if (empty($ten) || empty($giasp) || empty($soluong) || empty($tongtien) || empty($hinhanh) || empty($trangthai)) {
+        echo "Vui lòng điền đầy đủ thông tin.";
+    
+    } else {
+        // Lưu thông tin vào bảng "donhang"
+        $sql = "INSERT INTO donhang (ten_sanpham, giasp, soluong, tongtien, hinhanh, trangthai) 
+                VALUES ('$ten', '$giasp', '$soluong', '$tongtien', '$hinhanh', '$trangthai')";
+        
+        if ($conn->query($sql) === TRUE) {
+            // echo "Thông tin của bạn đã được gửi thành công!";
+        } else {
+            echo "Lỗi khi lưu thông tin: " . $conn->error;
+        }
+    }
+} else {
+    echo "Phương thức không được hỗ trợ.";
+}
+
+// Đóng kết nối
+$conn->close();
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
     <head>
@@ -13,11 +48,11 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">TRANG CHỦ</a></li>
-                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
-                    <li><a href="sanpham.html">SẢN PHẨM</a></li>
-                    <li><a href="khuyenmai.html">KHUYẾN MÃI</a></li>
-                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                    <li><a href="index.php">TRANG CHỦ</a></li>
+                    <li><a href="gioithieu.php">GIỚI THIỆU</a></li>
+                    <li><a href="sanpham.php">SẢN PHẨM</a></li>
+                    <li><a href="khuyenmai.php">KHUYẾN MÃI</a></li>
+                    <li><a href="lienhe.php">LIÊN HỆ</a></li>
                 </ul>
             </nav>
             <div class="buttons">
@@ -29,7 +64,7 @@
 
     <div class="payment-form">
         <h2>Thanh Toán</h2>
-        <form action="#" method="post">
+        <form action="" method="POST">
         
         <label for="name">Họ và Tên</label>
         <input type="text" id="name" name="name" required>
@@ -39,6 +74,9 @@
 
         <label for="amount">Số tiền</label>
         <input type="number" id="amount" name="amount" required>
+
+        <label for="magiamgia">Voucher Giảm Giá</label>
+        <input type="magiamgia" id="magiamgia" name="magiamgia">
 
         <label for="address">Địa Chỉ</label>
         <input type="address" id="address" name="address" required>

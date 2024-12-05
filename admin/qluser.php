@@ -19,7 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+    <link href="css/user.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -30,6 +30,27 @@
 <?php
     include "headerr.php";
 ?>
+<div class="ormandetlime">
+    <h2>Quản Lý Người Dùng</h2>
+    <table>
+        <tr>
+            <th>Stt</th>
+            <th>Tên Đăng Nhập</th>
+            <th>Mật Khẩu</th>
+            <th>Họ Tên</th>
+            <th>Email</th>
+            <th>Tùy biến</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>minhlinh</td>
+            <td>123</td>
+            <td>Nguyễn Min Lĩnh</td>
+            <td>linhclear@gmail.com</td>
+            <td><a href="#">Sửa</a> | <a href="#">Xóa</a></td>
+        </tr>
+    </table>
+</div>
 
 
 
