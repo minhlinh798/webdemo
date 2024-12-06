@@ -4,6 +4,7 @@
 
     if (!isset($_SESSION['user_id'])) {
         echo "Bạn cần đăng nhập trước khi truy cập giỏ hàng.";
+        header('Location: dangnhap.php');
         exit;
     }
 
@@ -73,7 +74,7 @@
     <body>
         <header>
             <div class="logo">
-                <img src="imgs/logo.png" alt="Miin Foods">
+                <img src="imgs/logo.png" alt="Miin Foods" width="50px" height="50px">
             </div>
             <nav>
                 <ul style="list-style-type: none; display: flex; gap: 15px; margin-right: 410px;">

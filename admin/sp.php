@@ -30,7 +30,7 @@ body {
 }
 
 .connten {
-    max-width: 1100px;
+    /* max-width: 1100px; */
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;

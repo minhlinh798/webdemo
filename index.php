@@ -18,7 +18,7 @@ if (isset($_SESSION['icon'])) {
     <body>
         <header>
             <div class="logo">
-                <img class="anhnguoidung" src="imgs/logo.png" alt="Miin Foods">
+                <img class="anhnguoidung" src="imgs/logo.png" alt="Miin Foods" width="50px" height="50px">
             </div>
             <nav>
                 <ul>
@@ -53,6 +53,28 @@ if (isset($_SESSION['icon'])) {
             </div>
         </header>
         <style>
+            .product_list li {
+                position: relative;
+                background-color: #f9f9f9;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                overflow: hidden;
+                width: 250px;
+                height: 300px;
+                text-align: center;
+                box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                transition: transform 0.2s;
+            }
+            h2.title_product {
+                padding-top: 10px;
+            }
+            h2 {
+                display: block;
+                text-align: center;
+                padding-top: 40px;
+                padding-bottom: 30px;
+                font-family: cursive;
+            }
             .slideshow-container {
                 position: relative;
                 margin: auto;
@@ -108,86 +130,78 @@ if (isset($_SESSION['icon'])) {
                     <h2>Trà Sữa</h2>
                     <ul class="product_list">
                         <li>
-                            <a class="product" href="">
-                                <img src="imgs/b1.png">
-                                <a class="icon" href="giohang.html" class="cart-icon">
+                            <a class="product" href="#">
+                                <img src="admin/class/uploads/b2.png">
+                                <a class="icon" href="#" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
-                                <p class="title_product">Trà sữa trân châu đen</p>
-                                <p class="price_product">Giá: 20.000 vnđ</p>
+                                <h2 class="title_product">Trà Sữa Trân Châu</h2>
                             </a>
                         </li>
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/b4.png">
-                                <a class="icon" href="giohang.html" class="cart-icon">
+                                <img src="admin/class/uploads/b6.png">
+                                <a class="icon" href="#" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
-                                <p class="title_product">Trà sữa thái xanh</p>
-                                <p class="price_product">Giá: 20.000 vnđ</p>
+                                <h2 class="title_product">Trà Đào</h2>
                             </a>
                         </li>
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/b6.png">
-                                <a class="icon" href="giohang.html" class="cart-icon">
+                                <img src="admin/class/uploads/f1.png">
+                                <a class="icon" href="#" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
-                                <p class="title_product">Trà đào</p>
-                                <p class="price_product">Giá: 20.000 vnđ</p>
+                                <h2 class="title_product">Matcha Đá Xay</h2>
                             </a>
                         </li>
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/b9.png">
-                                <a class="icon" href="giohang.html" class="cart-icon">
+                                <img src="admin/class/uploads/b9.png">
+                                <a class="icon" href="#" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
-                                <p class="title_product">Bạc xỉu</p>
-                                <p class="price_product">Giá: 20.000 vnđ</p>
+                                <h2 class="title_product">Bạc xỉu</h2>
                             </a>
                         </li>
                     </ul>
-                    <h2>Đồ Chiên</h2>
+                    <h2>Món Mặn</h2>
                     <ul class="product_list">
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/b1.png">
-                                <a class="icon" href="giohang.html" class="cart-icon">
+                                <img src="admin/class/uploads/d1.png">
+                                <a class="icon" href="#" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
-                                <p class="title_product">Tên sản phẩm: gì đó</p>
-                                <p class="price_product">Giá: 20.000 vnđ</p>
+                                <h2 class="title_product">Bánh Mỳ</h2>
                             </a>
                         </li>
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/b1.png">
-                                <a class="icon" href="giohang.html" class="cart-icon">
+                                <img src="admin/class/uploads/g1.png">
+                                <a class="icon" href="#" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
-                                <p class="title_product">Tên sản phẩm: gì đó</p>
-                                <p class="price_product">Giá: 20.000 vnđ</p>
+                                <h2 class="title_product">Thịt Chóa</h2>
                             </a>
                         </li>
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/b1.png">
-                                <a class="icon" href="giohang.html" class="cart-icon">
+                                <img src="admin/class/uploads/ư1.png">
+                                <a class="icon" href="#" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
-                                <p class="title_product">Tên sản phẩm: gì đó</p>
-                                <p class="price_product">Giá: 20.000 vnđ</p>
+                                <h2 class="title_product">Thịt Chuột</h2>
                             </a>
                         </li>
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/b1.png">
-                                <a class="icon" href="giohang.html" class="cart-icon">
+                                <img src="admin/class/uploads/d2.png">
+                                <a class="icon" href="#" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
-                                <p class="title_product">Tên sản phẩm: gì đó</p>
-                                <p class="price_product">Giá: 20.000 vnđ</p>                             
+                                <h2 class="title_product">Mỳ Tôm</h2>
                             </a>
                         </li>
                     </ul>
@@ -195,42 +209,38 @@ if (isset($_SESSION['icon'])) {
                     <ul class="product_list">
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/b10.png">
-                                <a class="icon" href="giohang.html" class="cart-icon">
+                                <img src="admin/class/uploads/s2.png">
+                                <a class="icon" href="#" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
-                                <p class="title_product">Lẩu hải sản</p>
-                                <p class="price_product">Giá: 20.000 vnđ</p>           
+                                <h2 class="title_product">Lạp Xưởng Nướng Đá</h2>
                             </a>
                         </li>
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/b3.png">
-                                <a class="icon" href="giohang.html" class="cart-icon">
+                                <img src="admin/class/uploads/a3.png">
+                                <a class="icon" href="#" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
-                                <p class="title_product">Lẩu kim chi hàn quốc</p>
-                                <p class="price_product">Giá: 20.000 vnđ</p>
+                                <h2 class="title_product">Bánh Tráng Trộn</h2>
                             </a>
                         </li>
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/b6.png">
-                                <a class="icon" href="giohang.html" class="cart-icon">
+                                <img src="admin/class/uploads/a4.png">
+                                <a class="icon" href="#" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
-                                <p class="title_product">Lẩu thái</p>
-                                <p class="price_product">Giá: 20.000 vnđ</p>
+                                <h2 class="title_product">Chân Gà Sốt Thái</h2>
                             </a>
                         </li>
                         <li>
                             <a class="product" href="">
-                                <img src="imgs/b9.png">
-                                <a class="icon" href="giohang.html" class="cart-icon">
+                                <img src="admin/class/uploads/s5.png">
+                                <a class="icon" href="#" class="cart-icon">
                                     <img name="icon-list" src="https://img.pikbest.com/png-images/shopping-cart-icon---vector-template---transparent-background_1794341.png!sw800" alt="Thêm vào giỏ hàng">
                                 </a>
-                                <p class="title_product">Lẩu bò</p>
-                                <p class="price_product">Giá: 20.000 vnđ</p>
+                                <h2 class="title_product">Tobokky</h2>
                             </a>
                         </li>
                     </ul>

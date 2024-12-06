@@ -40,7 +40,7 @@
     }
 
     // Lấy dữ liệu từ bảng donhang
-    $sql = "SELECT id_donhang, ten_sanpham, giasp, soluong, tongtien, hinhanh, trangthai, created_at FROM donhang ORDER BY created_at DESC";
+    $sql = "SELECT id_donhang, ten_sanpham, giasp, soluong, tongtien, anh, trangthai, created_at FROM donhang ORDER BY created_at DESC";
     $result = $conn->query($sql);
 ?>
 <div class="moemboo2">
@@ -69,7 +69,7 @@
             <td><?php echo $row['giasp']; ?>vnđ</td>
             <td><?php echo $row['soluong']; ?></td>
             <td><?php echo $row['tongtien']; ?>vnđ</td>
-            <td><?php echo $row['hinhanh']; ?></td>
+            <td><?php echo $row['anh']; ?></td>
             <td><?php echo $row['trangthai']; ?></td>
             <td><?php echo $row['created_at']; ?></td>
             <td><a href="duyetdh.php?id=<?php echo $row['id_donhang']; ?>">Duyệt ĐH</a></td>
