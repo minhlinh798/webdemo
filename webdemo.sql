@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 06, 2024 lúc 12:17 PM
+-- Thời gian đã tạo: Th12 12, 2024 lúc 08:00 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.1.25
 
@@ -50,14 +50,28 @@ INSERT INTO `danhmuc` (`id_danhmuc`, `ten_danhmuc`) VALUES
 
 CREATE TABLE `donhang` (
   `id_donhang` int(11) NOT NULL,
-  `ten_sanpham` varchar(100) NOT NULL,
-  `giasp` varchar(100) NOT NULL,
-  `soluong` varchar(100) NOT NULL,
-  `tongtien` varchar(100) NOT NULL,
-  `anh` varchar(100) NOT NULL,
+  `fullname` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `address` varchar(50) NOT NULL,
+  `ten_voucher` varchar(50) NOT NULL,
+  `tongtien_giam` varchar(50) NOT NULL,
   `trangthai` varchar(50) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `tongtien` varchar(100) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `user_id` int(11) NOT NULL,
+  `method` int(11) NOT NULL,
+  `ten_sanpham` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `donhang`
+--
+
+INSERT INTO `donhang` (`id_donhang`, `fullname`, `email`, `address`, `ten_voucher`, `tongtien_giam`, `trangthai`, `tongtien`, `created_at`, `user_id`, `method`, `ten_sanpham`) VALUES
+(1, 'nguyễn minh lĩnh', 'linhclear@gmail.com', 'tam kỳ', 'MINHLINH', '24000', 'Đã duyệt', '96000', '2024-12-08 05:49:19', 3, 0, ''),
+(2, 'minh lĩnh nguyễn', '123@gmail.com', 'tam kỳ', 'MINHLINH', '110000', 'Đã duyệt', '440000', '2024-12-08 05:58:39', 3, 0, ''),
+(3, 'linh123', 've@gmail.com', 'tam kỳ', 'MINHLINH', '10000', 'Đã duyệt', '40000', '2024-12-08 06:16:54', 3, 0, ''),
+(4, 'admin', '123@gmail.com', 'khối phố 5, phường an xuân, tp tam kỳ, quảng nam.', 'MINHLINH', '31600', 'Đã duyệt', '126400', '2024-12-12 06:52:59', 3, 0, '');
 
 -- --------------------------------------------------------
 
@@ -158,6 +172,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `fullname` varchar(100) NOT NULL,
   `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `icon` varchar(255) DEFAULT 'icons.png',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
@@ -167,8 +182,30 @@ CREATE TABLE `users` (
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `fullname`, `username`, `password`, `icon`, `created_at`) VALUES
-(2, 'nguyễn minh lĩnh', 'linh', '$2y$10$7Oj5VAcgKxAvTVF.J7PZD.zEyi3buICJljol4hc42ZqOamO8IF6iW', 'icons.png', '2024-12-06 08:55:38');
+INSERT INTO `users` (`id`, `fullname`, `username`, `email`, `password`, `icon`, `created_at`) VALUES
+(3, 'nguyễn minh lĩnh', 'linh', 'linhclear@gmail.com', '123', 'icons.png', '2024-12-07 05:15:59'),
+(4, 'minh lĩnh nguyễn', 'linh2003', '123@gmail.com', '12345', 'icons.png', '2024-12-07 05:23:53');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `voucher`
+--
+
+CREATE TABLE `voucher` (
+  `id_voucher` int(11) NOT NULL,
+  `ten_voucher` varchar(50) NOT NULL,
+  `noidung` varchar(50) NOT NULL,
+  `ngay_bat_dau` date NOT NULL,
+  `ngay_ket_thuc` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `voucher`
+--
+
+INSERT INTO `voucher` (`id_voucher`, `ten_voucher`, `noidung`, `ngay_bat_dau`, `ngay_ket_thuc`) VALUES
+(17, 'MINHLINH', '20', '2024-12-01', '2024-12-20');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -212,6 +249,12 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `username` (`username`);
 
 --
+-- Chỉ mục cho bảng `voucher`
+--
+ALTER TABLE `voucher`
+  ADD PRIMARY KEY (`id_voucher`);
+
+--
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
 
@@ -225,13 +268,13 @@ ALTER TABLE `danhmuc`
 -- AUTO_INCREMENT cho bảng `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `id_donhang` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_donhang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `giohang`
 --
 ALTER TABLE `giohang`
-  MODIFY `id_giohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_giohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `lienhe`
@@ -249,7 +292,13 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT cho bảng `voucher`
+--
+ALTER TABLE `voucher`
+  MODIFY `id_voucher` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

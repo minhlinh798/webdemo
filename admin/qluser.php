@@ -30,25 +30,56 @@
 <?php
     include "headerr.php";
 ?>
+<?php
+    $conn = new mysqli("localhost", "root", "", "webdemo");
+    if($conn->connect_error){
+        die("kết nối thất bại: " . $conn->connect_error);
+    }
+    $sql = "SELECT id, fullname, username, password, email, created_at FROM users ORDER BY id DESC";
+    $result = $conn->query($sql);
+?>
+<style>
+.ormandetlime {
+    max-width: 1700px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+</style>
 <div class="ormandetlime">
     <h2>Quản Lý Người Dùng</h2>
     <table>
         <tr>
             <th>Stt</th>
+            <th>Id</th>
             <th>Tên Đăng Nhập</th>
             <th>Mật Khẩu</th>
             <th>Họ Tên</th>
             <th>Email</th>
+            <th>Created_at</th>
             <th>Tùy biến</th>
         </tr>
+        <?php 
+            if($result->num_rows > 0){ $i=0;
+                while($row = $result->fetch_assoc()){$i++;
+        ?>
         <tr>
-            <td>1</td>
-            <td>minhlinh</td>
-            <td>123</td>
-            <td>Nguyễn Min Lĩnh</td>
-            <td>linhclear@gmail.com</td>
-            <td><a href="#">Sửa</a> | <a href="#">Xóa</a></td>
+            <td><?php echo $i ?></td>
+            <td><?php echo $row['id']; ?></td>
+            <td><?php echo $row['username']; ?></td>
+            <td><?php echo $row['password']; ?></td>
+            <td><?php echo $row['fullname']; ?></td>
+            <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['created_at']; ?></td>
+            <td><a href="deleteuser.php?id=<?php echo $row['id']; ?>">Xóa</a></td>
         </tr>
+        <?php
+                }
+            }
+        ?>
     </table>
 </div>
 

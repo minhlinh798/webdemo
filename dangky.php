@@ -1,31 +1,40 @@
 <?php
-include "connect.php";
+    include "connect.php";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $fullname = $_POST['fullname'];
-    $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // Mã hóa mật khẩu
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $fullname = $_POST['fullname'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $email = $_POST['email'];
 
-    // Thêm người dùng vào cơ sở dữ liệu
-    $query = "INSERT INTO users (fullname, username, password) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("sss", $fullname, $username, $password);
+        // Kiểm tra xem tài khoản đã tồn tại chưa
+        $checkQuery = "SELECT * FROM users WHERE username = ? OR email = ?";
+        $checkStmt = $conn->prepare($checkQuery);
+        $checkStmt->bind_param("ss", $username, $email);
+        $checkStmt->execute();
+        $checkResult = $checkStmt->get_result();
 
-    if ($stmt->execute()) {
-        // Nếu thêm thành công, điều hướng tới trang đăng nhập
-        echo "<script>
-                alert('Đăng ký tài khoản thành công!');
-                window.location.href = 'dangnhap.php';
-              </script>";
-        exit;
-    } else {
-        // Nếu xảy ra lỗi, hiển thị thông báo lỗi
-        echo "<script>alert('Đăng ký thất bại! Vui lòng thử lại.');</script>";
+        if ($checkResult->num_rows > 0) {
+            echo "<script>alert('Tên đăng nhập hoặc email đã tồn tại! Vui lòng thử lại.');</script>";
+        } else {
+            $query = "INSERT INTO users (fullname, username, password, email) VALUES (?, ?, ?, ?)";
+            $stmt = $conn->prepare($query);
+            $stmt->bind_param("ssss", $fullname, $username, $password, $email);
+
+            if ($stmt->execute()) {
+                echo "<script>
+                        alert('Đăng ký tài khoản thành công!');
+                        window.location.href = 'dangnhap.php';
+                    </script>";
+                exit();
+            } else {
+                echo "<script>alert('Đăng ký thất bại! Vui lòng thử lại.');</script>";
+            }
+            $stmt->close();
+        }
+        $checkStmt->close();
+        $conn->close();
     }
-
-    $stmt->close();
-    $conn->close();
-}
 ?>
 <!DOCTYPE html>
 <html lang="vi">
@@ -44,6 +53,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <label for="username">Tên đăng nhập:</label>
         <input type="text" id="username" name="username" required>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required>
 
         <label for="password">Mật khẩu:</label>
         <input type="password" id="password" name="password" required>

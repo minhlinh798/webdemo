@@ -79,6 +79,16 @@
         <a class="collapse-item" href="sp.php">Danh Sách Sản Phẩm</a>
     </div>
 </li>
+<li class="nav-item">
+    <div class="pagesmenu">
+        <a class="collapse-item" href="addvoucher.php">Thêm Mã Voucher</a>
+    </div>
+</li>
+<li class="nav-item">
+    <div class="pagesmenu">
+        <a class="collapse-item" href="voucher.php">Danh Sách Mã Voucher</a>
+    </div>
+</li>
 <!-- Nav Item - Tables -->
 <li class="nav-item">
     <div class="pagesmenu">
@@ -88,7 +98,7 @@
 <!-- Divider -->
 <li class="nav-item">
     <div class="pagesmenu">
-        <a class="collapse-item" href="qldh.php">Quản Lý Đơn</a>
+        <a class="collapse-item" href="qldh.php">Quản Lý Đơn Hàng</a>
     </div>
 </li>
 <li class="nav-item">

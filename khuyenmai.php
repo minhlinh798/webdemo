@@ -1,3 +1,6 @@
+<?php
+    include "connect.php";
+?>
 <!DOCTYPE html>
 <html lang="vi">
     <head>
@@ -24,20 +27,24 @@
         </header>
         <div class="promotion">
             <h1>🎉 SIÊU KHUYẾN MÃI CUỐI NĂM 🎉</h1>
+            <?php
+                // Truy vấn danh sách voucher
+                $sql = "SELECT * FROM voucher ORDER BY id_voucher DESC";
+                $result = $conn->query($sql);
+
+                if ($result && $result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+            ?>
             <div class="voucher">
-                <h2>Mã: SAVE20</h2>
-                <p>Giảm 20% cho tất cả đơn hàng trên 1.000.000 VND</p>
-                <p>Áp dụng từ: 01/12/2024 đến 31/12/2024</p>
+                <h2>Mã: <?php echo $row['ten_voucher']; ?></h2>
+                <p>giá trị mã được giảm giá: <?php echo $row['noidung']; ?>%</p>
+                <p>ngày bắt đầu mã: <?php echo $row['ngay_bat_dau']; ?></p>
+                <p>ngày kết thúc mã: <?php echo $row['ngay_ket_thuc']; ?></p>
             </div>
-            <div class="voucher">
-                <h2>Mã: FREESHIP</h2>
-                <p>Miễn phí vận chuyển cho đơn hàng bất kỳ</p>
-                <p>Áp dụng từ: 01/12/2024 đến 31/12/2024</p> 
-            </div> <div class="voucher">
-                <h2>Mã: BUY1GET1</h2>
-                <p>Mua 1 tặng 1 cho sản phẩm cùng loại</p>
-                <p>Áp dụng từ: 01/12/2024 đến 15/12/2024</p>
-            </div>
+            <?php
+                }
+            }
+            ?>
             <p>Lưu ý: Mã voucher không được kết hợp với các chương trình khuyến mãi khác. Mỗi mã voucher chỉ sử dụng được một lần.</p>
         </div>
     </body>

@@ -5,7 +5,17 @@ body {
     background-color: #f8f9fa;
 }
 
-.ormandetlime h2 {
+.connten-brem {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.connten-brem h1 {
     color: #333;
     margin-bottom: 20px;
 }
@@ -33,6 +43,10 @@ table tr:nth-child(even) {
 
 table tr:hover {
     background-color: #f1f1f1;
+}
+
+table th, table td {
+    text-align: center;
 }
 
 a {
